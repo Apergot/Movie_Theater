@@ -18,20 +18,12 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     </head>
     <body>
-        
-
-
-        
-        
         <%
             int id = Integer.parseInt(request.getParameter("id"));
             UseTopRated prueba = (UseTopRated)session.getAttribute("UseTopRatedClass");
             TopRatedMovie trm = prueba.searchMovie(id);
             String ImagenPrueba = prueba.getPosterFromTRM(trm);
         %>
-     
-
-        
         <h2 style="text-align: center"><%= trm.getTitle() %></h2>
         <table style="width:100%">
             <tr>
@@ -74,6 +66,8 @@
                     </div>
                 </td>
             </tr>
+            
+            <a href="rentingForm.html"><h3>Try</h3></a>
         </table>
     </body>
 </html>
