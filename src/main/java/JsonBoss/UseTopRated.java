@@ -49,7 +49,7 @@ public class UseTopRated {
     }
     
     public String getPosterFromTRM(TopRatedMovie trm){
-        String poster = trm.getPoster_path();
+        String poster = "https://image.tmdb.org/t/p/w500/"+trm.getPoster_path();
         return poster;
     }
     

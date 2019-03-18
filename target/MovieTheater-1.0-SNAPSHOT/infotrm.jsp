@@ -28,16 +28,20 @@
                 <th colspan="2"></th>
             </tr>
             <tr>
-                <td><img src = <%= "https://image.tmdb.org/t/p/w500"+ImagenPrueba%> alt = "poster" width = "202" height = "302"></button></a></td>
+                <td><img src = "<%=ImagenPrueba%>" alt = "poster" width = "202" height = "302"></td>
                 <td>
                     <div>
                         <p>Overview: <%= trm.getOverview() %></p>
                         <div>
                             <p>Release Date: <%= trm.getRelease_date()%></p>
                             <div>
-                                <p>Vote Average: <%= trm.getVote_average()%></p>
+                                <p>Average Score: <%= trm.getVote_average()%></p>
                                 <div>
                                     <p>Original Title: <%= trm.getOriginal_title()%></p>
+                                    <div>
+                            
+                                        
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -47,3 +51,4 @@
         </table>
     </body>
 </html>
+
