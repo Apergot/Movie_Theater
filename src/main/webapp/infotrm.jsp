@@ -68,7 +68,7 @@
             </tr>
         </table>
         <br></br>
-        <a href="rentingForm.html?id=<%=id%>"><button>Make a reservation!</button></a>
+        <a href="rentinForm.jsp?id=<%=id%>"><button>Make a reservation!</button></a>
     </body>
 </html>
 

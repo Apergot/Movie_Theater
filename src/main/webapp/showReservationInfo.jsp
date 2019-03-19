@@ -12,6 +12,13 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <%
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String phone = request.getParameter("phone");
+        String date = request.getParameter("date");
+        String time = request.getParameter("time");
+        %>
         <h1>Hello World!</h1>
     </body>
 </html>

@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-        <title>Rent movie form</title>
+        <title>Reservation</title>
 
     </head>
 
@@ -42,7 +42,12 @@
                                     </div>
                                     <div>
                                         <span>Pickup Location</span>
-                                        <input type="text" name="location"placeholder="Location">
+                                        <select>
+                                            <option>Telde</option>
+                                            <option>Vecindario</option>
+                                            <option>Valsequillo</option>
+                                            <option>Arucas</option>
+                                        </select>
                                     </div>
 
                                     <div>
@@ -54,61 +59,13 @@
                                         </div>
                                         <div>
                                             <div>
-                                                <div>
-                                                    <div>
-                                                        <span>Hour</span>
-                                                        <select id="hour">
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
-                                                            <option>6</option>
-                                                            <option>7</option>
-                                                            <option>8</option>
-                                                            <option>9</option>
-                                                            <option>10</option>
-                                                            <option>11</option>
-                                                            <option>12</option>
-                                                        </select>
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <span>Min</span>
-                                                        <select id="minutes">
-                                                            <option>05</option>
-                                                            <option>10</option>
-                                                            <option>15</option>
-                                                            <option>20</option>
-                                                            <option>25</option>
-                                                            <option>30</option>
-                                                            <option>35</option>
-                                                            <option>40</option>
-                                                            <option>45</option>
-                                                            <option>50</option>
-                                                            <option>55</option>
-                                                        </select>
-                                                        <span></span>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <div>
-                                                        <span>AM/PM</span>
-                                                        <select id="timeday">
-                                                            <option>AM</option>
-                                                            <option>PM</option>
-                                                        </select>
-                                                        <span></span>
-                                                    </div>
-                                                </div>
+                                                <span>Time</span>
+                                                <input type="time" name="time" required>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div>
-                                        <input type="submit" value="Submit">
-                                    </div>
+                                        <div>
+                                            <input type="submit" value="Submit">
+                                        </div>
                                 </form>
                             </div>
                         </div>

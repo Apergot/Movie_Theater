@@ -59,6 +59,9 @@
                                             }
                                         %>
                                         <%-- end web service invocation --%><hr/>
+                                        <div>
+                                            <p><%= trm.getOriginal_language() %></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +71,7 @@
             </tr>
         </table>
         <br></br>
-        <a href="rentingForm.html?id=<%=id%>"><button>Make a reservation!</button></a>
+        <a href="rentinForm.jsp?id=<%=id%>"><button>Make a reservation!</button></a>
     </body>
 </html>
 
