@@ -59,9 +59,6 @@
                                             }
                                         %>
                                         <%-- end web service invocation --%><hr/>
-                                        <div>
-                                            <p><%= trm.getOriginal_language() %></p>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
