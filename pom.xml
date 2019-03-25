@@ -116,6 +116,21 @@
                         <id>wsimport-generate-Stars</id>
                         <phase>generate-sources</phase>
                     </execution>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <configuration>
+                            <wsdlFiles>
+                                <wsdlFile>localhost_8080/databaseWS/AddDB.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <packageName></packageName>
+                            <wsdlLocation>http://localhost:8080/databaseWS/AddDB?WSDL</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/AddDB.stale</staleFile>
+                        </configuration>
+                        <id>wsimport-generate-AddDB</id>
+                        <phase>generate-sources</phase>
+                    </execution>
                 </executions>
                 <dependencies>
                     <dependency>
