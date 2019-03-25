@@ -13,37 +13,74 @@
         <title>JSP Page</title>
     </head>
     <body>
-      
-        <h1>Your reservation has been completed with the following info</h1>
+
+        <h2 style="text-align: center">Your reservation has been completed with the following info</h2>
         <%
-        String id = request.getParameter("id");
-        String name = request.getParameter("name");
-        String email = request.getParameter("email");
-        String phone = request.getParameter("phone");
-        String date = request.getParameter("date");
-        String time = request.getParameter("time");
+            String id = request.getParameter("id");
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+            String phone = request.getParameter("phone");
+            String date = request.getParameter("date");
+            String time = request.getParameter("time");
+            int idbd=0;
+            try {
+                insert.AddDB_Service service = new insert.AddDB_Service();
+                insert.AddDB port = service.getAddDBPort();
+                // TODO initialize WS operation arguments here
+                // TODO process result here
+                java.lang.String result = port.insertDB(name, phone, email, date, time, id);
+            } catch (Exception ex) {
+                // TODO handle custom exceptions here
+            }
         %>
-        <%-- start web service invocation --%><hr/>
-            <%
-                    try {
-                        insert.AddDB_Service service = new insert.AddDB_Service();
-                        insert.AddDB port = service.getAddDBPort();
-                        // TODO initialize WS operation arguments here
-                        // TODO process result here
-                        java.lang.String result = port.insertDB(name, phone, email, date, time, id);
-                        out.println("Result = "+result);
-                    } catch (Exception ex) {
-                        // TODO handle custom exceptions here
+        
+        
+        <%
+                //here we take the reservation id from the email, which is unique
+                try {
+                    insert.AddDB_Service service = new insert.AddDB_Service();
+                    insert.AddDB port = service.getAddDBPort();
+                    // TODO initialize WS operation arguments here
+                    
+                    // TODO process result here
+                    idbd = port.getReservationId(email);
+                  
+                } catch (Exception ex) {
+                    // TODO handle custom exceptions her
             }
             %>
-            <%-- end web service invocation --%><hr/>
-        <p>Name: <%= name%></p>
-        <p>E-mail: <%= email %></p>
-        <p>Phone: <%= phone %></p>
-        <p>Pick up date: <%= date %></p>
-        <p>Pick up hour: <%= time %></p>
-        <p>ID: <%= id%></p>
-        <br></br>
-        <a href="toprated.jsp"><button onclick>Go to the main page</button></a>
+            
+            
+            <%
+                //here we get an object reservation which we have to cast to use later
+                        try {
+                            insert.AddDB_Service service = new insert.AddDB_Service();
+                            insert.AddDB port = service.getAddDBPort();
+                            // TODO initialize WS operation arguments here
+                           
+                            // TODO process result here
+                            insert.Reservation result = port.getReservation(idbd);
+                            
+                        } catch (Exception ex) {
+                            // TODO handle custom exceptions her
+                }
+                %>
+    
+
+       
+
+
+        
+        <div style="text-align: center">
+            <p>Name: <%= name%></p>
+            <p>E-mail: <%= email%></p>
+            <p>Phone: <%= phone%></p>
+            <p>Pick up date: <%= date%></p>
+            <p>Pick up hour: <%= time%></p>
+            <p>ID: <%= id%></p>
+            <br></br>
+            <a href="toprated.jsp"><button onclick>Go to the main page</button></a>
+        </div>
+
     </body>
 </html>

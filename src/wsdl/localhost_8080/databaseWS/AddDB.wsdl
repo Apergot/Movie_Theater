@@ -4,21 +4,59 @@
 <xsd:import namespace="http://insert/" schemaLocation="http://localhost:8080/databaseWS/AddDB?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="getReservationId">
+<part name="parameters" element="tns:getReservationId"/>
+</message>
+<message name="getReservationIdResponse">
+<part name="parameters" element="tns:getReservationIdResponse"/>
+</message>
 <message name="insertDB">
 <part name="parameters" element="tns:insertDB"/>
 </message>
 <message name="insertDBResponse">
 <part name="parameters" element="tns:insertDBResponse"/>
 </message>
+<message name="getReservation">
+<part name="parameters" element="tns:getReservation"/>
+</message>
+<message name="getReservationResponse">
+<part name="parameters" element="tns:getReservationResponse"/>
+</message>
 <portType name="AddDB">
+<operation name="getReservationId">
+<input wsam:Action="http://insert/AddDB/getReservationIdRequest" message="tns:getReservationId"/>
+<output wsam:Action="http://insert/AddDB/getReservationIdResponse" message="tns:getReservationIdResponse"/>
+</operation>
 <operation name="insertDB">
 <input wsam:Action="http://insert/AddDB/insertDBRequest" message="tns:insertDB"/>
 <output wsam:Action="http://insert/AddDB/insertDBResponse" message="tns:insertDBResponse"/>
 </operation>
+<operation name="getReservation">
+<input wsam:Action="http://insert/AddDB/getReservationRequest" message="tns:getReservation"/>
+<output wsam:Action="http://insert/AddDB/getReservationResponse" message="tns:getReservationResponse"/>
+</operation>
 </portType>
 <binding name="AddDBPortBinding" type="tns:AddDB">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="getReservationId">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="insertDB">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getReservation">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
