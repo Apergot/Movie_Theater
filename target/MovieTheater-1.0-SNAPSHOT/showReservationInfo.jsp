@@ -4,8 +4,11 @@
     Author     : Apergot
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
 <%@page import="PerdoUtils.Reservation"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="mail.NewJerseyClient"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,7 +25,20 @@
             String phone = request.getParameter("phone");
             String date = request.getParameter("date");
             String time = request.getParameter("time");
-            int idbd=0;
+            int idbd = 0;
+        %>
+        
+        <div style="text-align: center">
+            <p>Name: <%= name%></p>
+            <p>E-mail: <%= email%></p>
+            <p>Phone: <%= phone%></p>
+            <p>Pick up date: <%= date%></p>
+            <p>Pick up hour: <%= time%></p>
+            <p>ID: <%= id%></p>
+            <br></br>
+            <button onclick><a href="toprated.jsp">Go to the main page</a></button>
+        </div>
+        <%
             try {
                 insert.AddDB_Service service = new insert.AddDB_Service();
                 insert.AddDB port = service.getAddDBPort();
@@ -33,54 +49,27 @@
                 // TODO handle custom exceptions here
             }
         %>
-        
+
         
         <%
-                //here we take the reservation id from the email, which is unique
-                try {
-                    insert.AddDB_Service service = new insert.AddDB_Service();
-                    insert.AddDB port = service.getAddDBPort();
+            //here we take the reservation id from the email, which is unique
+            try {
+                insert.AddDB_Service service = new insert.AddDB_Service();
+                insert.AddDB port = service.getAddDBPort();
                     // TODO initialize WS operation arguments here
-                    
-                    // TODO process result here
-                    idbd = port.getReservationId(email);
-                  
-                } catch (Exception ex) {
-                    // TODO handle custom exceptions her
+
+                // TODO process result here
+                idbd = port.getReservationId(email);
+                
+            } catch (Exception ex) {
+                // TODO handle custom exceptions her
             }
-            %>
-            
-            
-            <%
-                //here we get an object reservation which we have to cast to use later
-                        try {
-                            insert.AddDB_Service service = new insert.AddDB_Service();
-                            insert.AddDB port = service.getAddDBPort();
-                            // TODO initialize WS operation arguments here
-                           
-                            // TODO process result here
-                            insert.Reservation result = port.getReservation(idbd);
-                            
-                        } catch (Exception ex) {
-                            // TODO handle custom exceptions her
-                }
-                %>
-    
-
-       
-
-
+        %>
         
-        <div style="text-align: center">
-            <p>Name: <%= name%></p>
-            <p>E-mail: <%= email%></p>
-            <p>Phone: <%= phone%></p>
-            <p>Pick up date: <%= date%></p>
-            <p>Pick up hour: <%= time%></p>
-            <p>ID: <%= id%></p>
-            <br></br>
-            <a href="toprated.jsp"><button onclick>Go to the main page</button></a>
-        </div>
-
+        <%
+            NewJerseyClient cliente = new NewJerseyClient();
+            cliente.putMail(email);
+        %>
+        
     </body>
 </html>

@@ -32,12 +32,19 @@
 
 <xs:complexType name="getReservationResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:reservation" minOccurs="0"/>
+<xs:element name="return" type="tns:Reservation" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="reservation">
-<xs:sequence/>
+<xs:complexType name="Reservation">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+<xs:element name="email" type="xs:string" minOccurs="0"/>
+<xs:element name="phone" type="xs:string" minOccurs="0"/>
+<xs:element name="date" type="xs:string" minOccurs="0"/>
+<xs:element name="time" type="xs:string" minOccurs="0"/>
+<xs:element name="movie_id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="insertDB">

@@ -16,6 +16,7 @@ stars\GiveStarsResponse.class
 stars\Stars.class
 stars\Stars_Service.class
 stars\ObjectFactory.class
+mail\NewJerseyClient.class
 JsonBoss\TopRated.class
 insert\InsertDB.class
 stars\GiveStars.class

@@ -41,6 +41,21 @@ public interface AddDB {
 
     /**
      * 
+     * @param id
+     * @return
+     *     returns insert.Reservation
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getReservation", targetNamespace = "http://insert/", className = "insert.GetReservation")
+    @ResponseWrapper(localName = "getReservationResponse", targetNamespace = "http://insert/", className = "insert.GetReservationResponse")
+    @Action(input = "http://insert/AddDB/getReservationRequest", output = "http://insert/AddDB/getReservationResponse")
+    public Reservation getReservation(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
      * @param date
      * @param phone
      * @param name
@@ -68,20 +83,5 @@ public interface AddDB {
         String time,
         @WebParam(name = "movie_id", targetNamespace = "")
         String movieId);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns insert.Reservation
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getReservation", targetNamespace = "http://insert/", className = "insert.GetReservation")
-    @ResponseWrapper(localName = "getReservationResponse", targetNamespace = "http://insert/", className = "insert.GetReservationResponse")
-    @Action(input = "http://insert/AddDB/getReservationRequest", output = "http://insert/AddDB/getReservationResponse")
-    public Reservation getReservation(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
 
 }

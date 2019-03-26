@@ -5,26 +5,47 @@
  */
 package PerdoUtils;
 
+import java.io.Serializable;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
 /**
  *
  * @author Apergot
  */
-public class Reservation {
-    
-    private String name;
-    private String phone;
-    private String email;
-    private String date;
-    private String time;
-    private String id;
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Reservation")
+public class Reservation implements Serializable{
+    @XmlElement(name = "name")
+    private final String name;
+    @XmlElement(name = "email")
+    private final String email;
+    @XmlElement(name = "phone")
+    private final String phone;
+    @XmlElement(name = "date")
+    private final String date;
+    @XmlElement(name = "time")
+    private final String time;
+    @XmlElement(name = "movie_id")
+    private final String movie_id;
 
-    public Reservation(String name, String phone, String email, String date, String time, String id) {
+    public Reservation(String name, String phone, String email, String date, String time, String movie_id) {
         this.name = name;
-        this.phone = phone;
         this.email = email;
+        this.phone = phone;
         this.date = date;
         this.time = time;
-        this.id = id;
+        this.movie_id = movie_id;
+    }
+    public Reservation(){
+        name = "";
+        email = "";
+        phone = "";
+        date = "";
+        time = "";
+        movie_id = "";
     }
 
     public String getName() {
@@ -47,34 +68,8 @@ public class Reservation {
         return time;
     }
 
-    public String getId() {
-        return id;
+    public String getMovie_Id() {
+        return movie_id;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-    
-    
     
 }
