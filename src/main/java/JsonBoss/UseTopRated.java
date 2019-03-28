@@ -33,7 +33,7 @@ public class UseTopRated {
         TopRated toprated = (TopRated) gson.fromJson(jsonTR, TopRated.class);
         movies = toprated.getResults();
         String page = "https://api.themoviedb.org/3/movie/top_rated?api_key=5c77838171bff895bbe25dbe9b674221&language=en-US&page=1";
-        int pages = 40;//toprated.getTotal_pages()
+        int pages = 10;//toprated.getTotal_pages()
         for (int i = 2; i <= pages; i++) {
             String newPage = page.substring(0,page.length()-1);
             URL newUrl = new URL(newPage+ i);

@@ -130,10 +130,10 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/databaseWS/AddDB.wsdl</wsdlFile>
+                                <wsdlFile>localhost_8080/DatabaseSoapWS/AddDB.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName></packageName>
-                            <wsdlLocation>http://localhost:8080/databaseWS/AddDB?WSDL</wsdlLocation>
+                            <wsdlLocation>http://localhost:8080/DatabaseSoapWS/AddDB?WSDL</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/AddDB.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-AddDB</id>

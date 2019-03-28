@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "AddDB", targetNamespace = "http://insert/", wsdlLocation = "http://localhost:8080/databaseWS/AddDB?WSDL")
+@WebServiceClient(name = "AddDB", targetNamespace = "http://insert/", wsdlLocation = "http://localhost:8080/DatabaseSoapWS/AddDB?WSDL")
 public class AddDB_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class AddDB_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/databaseWS/AddDB?WSDL");
+            url = new URL("http://localhost:8080/DatabaseSoapWS/AddDB?WSDL");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -26,36 +26,6 @@ public interface AddDB {
 
     /**
      * 
-     * @param email
-     * @return
-     *     returns int
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getReservationId", targetNamespace = "http://insert/", className = "insert.GetReservationId")
-    @ResponseWrapper(localName = "getReservationIdResponse", targetNamespace = "http://insert/", className = "insert.GetReservationIdResponse")
-    @Action(input = "http://insert/AddDB/getReservationIdRequest", output = "http://insert/AddDB/getReservationIdResponse")
-    public int getReservationId(
-        @WebParam(name = "email", targetNamespace = "")
-        String email);
-
-    /**
-     * 
-     * @param id
-     * @return
-     *     returns insert.Reservation
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getReservation", targetNamespace = "http://insert/", className = "insert.GetReservation")
-    @ResponseWrapper(localName = "getReservationResponse", targetNamespace = "http://insert/", className = "insert.GetReservationResponse")
-    @Action(input = "http://insert/AddDB/getReservationRequest", output = "http://insert/AddDB/getReservationResponse")
-    public Reservation getReservation(
-        @WebParam(name = "id", targetNamespace = "")
-        int id);
-
-    /**
-     * 
      * @param date
      * @param phone
      * @param name
@@ -83,5 +53,35 @@ public interface AddDB {
         String time,
         @WebParam(name = "movie_id", targetNamespace = "")
         String movieId);
+
+    /**
+     * 
+     * @param email
+     * @return
+     *     returns int
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getReservationId", targetNamespace = "http://insert/", className = "insert.GetReservationId")
+    @ResponseWrapper(localName = "getReservationIdResponse", targetNamespace = "http://insert/", className = "insert.GetReservationIdResponse")
+    @Action(input = "http://insert/AddDB/getReservationIdRequest", output = "http://insert/AddDB/getReservationIdResponse")
+    public int getReservationId(
+        @WebParam(name = "email", targetNamespace = "")
+        String email);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns insert.Reservation
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getReservation", targetNamespace = "http://insert/", className = "insert.GetReservation")
+    @ResponseWrapper(localName = "getReservationResponse", targetNamespace = "http://insert/", className = "insert.GetReservationResponse")
+    @Action(input = "http://insert/AddDB/getReservationRequest", output = "http://insert/AddDB/getReservationResponse")
+    public Reservation getReservation(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
 
 }

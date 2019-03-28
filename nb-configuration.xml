@@ -18,6 +18,6 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-maven-jaxws._5f_C_5f_Utilities>http://localhost:8080/MoviesWS/Utilities?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_Utilities>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_Rating>http://localhost:8080/RatingWS/Rating?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_Rating>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_Stars>http://localhost:8080/perdoWS/Stars?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_Stars>
-        <org-netbeans-modules-maven-jaxws._5f_C_5f_AddDB>http://localhost:8080/databaseWS/AddDB?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_AddDB>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_AddDB>http://localhost:8080/DatabaseSoapWS/AddDB?WSDL</org-netbeans-modules-maven-jaxws._5f_C_5f_AddDB>
     </properties>
 </project-shared-configuration>
