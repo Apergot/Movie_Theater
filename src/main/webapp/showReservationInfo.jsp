@@ -44,7 +44,7 @@
                 insert.AddDB port = service.getAddDBPort();
                 // TODO initialize WS operation arguments here
                 // TODO process result here
-                java.lang.String result = port.insertDB(name, phone, email, date, time, id);
+                java.lang.String result = port.insertDB(name,email, phone, date, time, id);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
             }

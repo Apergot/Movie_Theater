@@ -51,6 +51,7 @@
                                 <div>
                                     <span>Pickup Location</span>
                                     <select>
+                                        <otion>La Aldea</option>
                                         <option>Telde</option>
                                         <option>Vecindario</option>
                                         <option>Valsequillo</option>
