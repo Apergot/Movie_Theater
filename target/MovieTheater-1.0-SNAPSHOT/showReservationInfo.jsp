@@ -27,7 +27,7 @@
             String time = request.getParameter("time");
             int idbd = 0;
         %>
-        
+
         <div style="text-align: center">
             <p>Name: <%= name%></p>
             <p>E-mail: <%= email%></p>
@@ -44,32 +44,29 @@
                 insert.AddDB port = service.getAddDBPort();
                 // TODO initialize WS operation arguments here
                 // TODO process result here
-                java.lang.String result = port.insertDB(name,email, phone, date, time, id);
+                java.lang.String result = port.insertDB(name,phone, email, date, time, id);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
             }
         %>
 
-        
         <%
             //here we take the reservation id from the email, which is unique
             try {
                 insert.AddDB_Service service = new insert.AddDB_Service();
                 insert.AddDB port = service.getAddDBPort();
-                    // TODO initialize WS operation arguments here
-
+                // TODO initialize WS operation arguments here
                 // TODO process result here
                 idbd = port.getReservationId(email);
-                
+
             } catch (Exception ex) {
                 // TODO handle custom exceptions her
             }
         %>
-        
         <%
             NewJerseyClient cliente = new NewJerseyClient();
             cliente.putMail(email);
         %>
-        
+
     </body>
 </html>

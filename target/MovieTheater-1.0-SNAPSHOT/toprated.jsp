@@ -17,6 +17,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <style>
+        body {
+            background-color:#06080F;
+        }
+        
         ul {
             list-style-type: none;
             margin: 0;
@@ -43,10 +47,10 @@
 
         .footbuttons{
             
-            margin: 50px -50px; 
+            margin: 10px -50px; 
             position:relative;
             top:50%; 
-            left:50%;
+            left:46%;
         }
         .footbuttons .Button {
             background-color: #333;

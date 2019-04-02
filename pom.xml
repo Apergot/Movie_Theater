@@ -76,6 +76,14 @@
                                 <include>wsdl/**</include>
                             </includes>
                         </resource>
+                        <resource>
+                            <directory>src</directory>
+                            <targetPath>WEB-INF/classes/META-INF</targetPath>
+                            <includes>
+                                <include>jax-ws-catalog.xml</include>
+                                <include>wsdl/**</include>
+                            </includes>
+                        </resource>
                     </webResources>
                 </configuration>
             </plugin>
@@ -132,7 +140,10 @@
                             <wsdlFiles>
                                 <wsdlFile>localhost_8080/DatabaseSoapWS/AddDB.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <packageName></packageName>
+                            <packageName>db</packageName>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
                             <wsdlLocation>http://localhost:8080/DatabaseSoapWS/AddDB?WSDL</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/AddDB.stale</staleFile>
                         </configuration>
