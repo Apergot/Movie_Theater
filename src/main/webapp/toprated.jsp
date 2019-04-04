@@ -15,59 +15,8 @@
         <title>Perdoflix</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
     </head>
-    <style>
-        body {
-            background-color:#06080F;
-        }
-        
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: #333;
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        li a:hover {
-            background-color: #111;
-        } 
-
-        .footbuttons{
-            
-            margin: 10px -50px; 
-            position:relative;
-            top:50%; 
-            left:46%;
-        }
-        .footbuttons .Button {
-            background-color: #333;
-            border: none;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 12px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 12px;
-        }
-
-
-    </style>
     <body>
 
 
@@ -101,17 +50,35 @@
                     }
                 %>
                 <div class="img-box">
-                    <a href="infotrm.jsp?id=<%= trm.getId()%>"><img src = "<%=ImagenPrueba%>"></a>
+                    <a href="rentinForm.jsp?id=<%= trm.getId()%>"><img src = "<%=ImagenPrueba%>"></a>
                 </div>
                 <div class="content">
-                    <h2><%= title%><br><span> <%=trm.getVote_average()%></span></h2>
+                    <h2><%= title%><br>
+                        <span> 
+                            <%
+                                stars.Stars_Service service = new stars.Stars_Service();
+                                stars.Stars port = service.getStarsPort();
+                                // TODO initialize WS operation arguments here
+                                float average = trm.getVote_average();
+                                // TODO process result here
+                                java.lang.String result = port.giveStars(average);
+                                int stars = Integer.parseInt(result);
+                                for (int j = 0; j < stars; j++) {
+                            %>
+                            <i class="fas fa-star"></i>
+                            <%
+                                }
+
+                            %>
+                        </span>
+                    </h2>
                     <!--<p>Aquí hay que poner la descripción, vamos a ver si funciona primero</p>-->
                 </div>
             </div>
 
-            <%
-                }
+            <%                }
             %>
+
         </div>
         <div class="footbuttons">
             <a href="toprated.jsp?numPag=<%=numPag - 1%>"><button class="Button">Last Page</button></a>

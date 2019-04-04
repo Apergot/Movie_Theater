@@ -5,10 +5,14 @@
     <system systemId="http://localhost:8080/RatingWS/Rating?Tester" uri="wsdl/localhost_8080/RatingWS/Rating.tester"/>
     <system systemId="http://localhost:8080/RatingWS/Rating?WSDL" uri="wsdl/localhost_8080/RatingWS/Rating.wsdl"/>
     <system systemId="http://localhost:8080/RatingWS/Rating?xsd=1" uri="wsdl/localhost_8080/RatingWS/Rating.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/perdoWS/Stars?WSDL" uri="wsdl/localhost_8080/perdoWS/Stars.wsdl"/>
-    <system systemId="http://localhost:8080/perdoWS/Stars?xsd=1" uri="wsdl/localhost_8080/perdoWS/Stars.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/databaseWS/AddDB?WSDL" uri="wsdl/localhost_8080/databaseWS/AddDB.wsdl"/>
     <system systemId="http://localhost:8080/databaseWS/AddDB?xsd=1" uri="wsdl/localhost_8080/databaseWS/AddDB.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/DatabaseSoapWS/AddDB?WSDL" uri="wsdl/localhost_8080/DatabaseSoapWS/AddDB.wsdl"/>
     <system systemId="http://localhost:8080/DatabaseSoapWS/AddDB?xsd=1" uri="wsdl/localhost_8080/DatabaseSoapWS/AddDB.xsd_1.xsd"/>
+    <system systemId="http://ws.docencia.ces.siani.es/a21/databaseWS/AddDB?WSDL" uri="wsdl/ws.docencia.ces.siani.es/a21/databaseWS/AddDB.wsdl"/>
+    <system systemId="http://ws.docencia.ces.siani.es/a21/databaseWS/AddDB?xsd=1" uri="wsdl/ws.docencia.ces.siani.es/a21/databaseWS/AddDB.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/perdoWS/Stars?WSDL" uri="wsdl/localhost_8080/perdoWS/Stars.wsdl"/>
+    <system systemId="http://localhost:8080/perdoWS/Stars?xsd=1" uri="wsdl/localhost_8080/perdoWS/Stars.xsd_1.xsd"/>
+    <system systemId="http://ws.docencia.ces.siani.es/a21/perdoWS/Stars?WSDL" uri="wsdl/ws.docencia.ces.siani.es/a21/perdoWS/Stars.wsdl"/>
+    <system systemId="http://ws.docencia.ces.siani.es/a21/perdoWS/Stars?xsd=1" uri="wsdl/ws.docencia.ces.siani.es/a21/perdoWS/Stars.xsd_1.xsd"/>
 </catalog>

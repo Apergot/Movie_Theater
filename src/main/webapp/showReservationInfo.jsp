@@ -8,16 +8,23 @@
 <%@page import="java.util.List"%>
 <%@page import="PerdoUtils.Reservation"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="mail.NewJerseyClient"%>
+<%@page import="rest.NewJerseyClient"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="style3.css">
         <title>JSP Page</title>
     </head>
     <body>
+        <ul>
+            <li><a class="logo" href="toprated.jsp"><img src="https://fontmeme.com/permalink/190401/2daf2665b57c13133b7bb8ff49064292.png" alt="netflix-font" border="0" width="150" height="50"></a>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
 
-        <h2 style="text-align: center">Your reservation has been completed with the following info</h2>
+        <h2 style="text-align: center">Your reservation has been confirmed, check out your email!</h2>
         <%
             String id = request.getParameter("id");
             String name = request.getParameter("name");
@@ -27,16 +34,19 @@
             String time = request.getParameter("time");
             int idbd = 0;
         %>
-
-        <div style="text-align: center">
-            <p>Name: <%= name%></p>
-            <p>E-mail: <%= email%></p>
-            <p>Phone: <%= phone%></p>
-            <p>Pick up date: <%= date%></p>
-            <p>Pick up hour: <%= time%></p>
-            <p>ID: <%= id%></p>
-            <br></br>
-            <button onclick><a href="toprated.jsp">Go to the main page</a></button>
+        <div class="container">
+            <div class="container2">
+                <div>
+                <p>Client name: <%= name%></p>
+                <p>E-mail: <%= email%></p>
+                <p>Phone number: <%= phone%></p>
+                <p>Pick up date: <%= date%></p>
+                <p>Pick up hour: <%= time%></p>
+                <p>Movie id: <%= id%></p>
+                <br></br>
+                <a href="toprated.jsp"><button class="button">Go to the main page</button></a>
+                </div>
+            </div>
         </div>
         <%
             try {
@@ -44,7 +54,7 @@
                 insert.AddDB port = service.getAddDBPort();
                 // TODO initialize WS operation arguments here
                 // TODO process result here
-                java.lang.String result = port.insertDB(name,phone, email, date, time, id);
+                java.lang.String result = port.insertDB(name, phone, email, date, time, id);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
             }

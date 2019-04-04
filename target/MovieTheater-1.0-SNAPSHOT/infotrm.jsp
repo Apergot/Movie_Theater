@@ -15,7 +15,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Info</title>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">-->
     </head>
     <body>
         <%
@@ -31,16 +31,16 @@
                 <th colspan="2"></th>
             </tr>
             <tr>
-                <td><img src = "<%=ImagenPrueba%>" alt = "poster" width = "202" height = "302"></td>
+                <td><img src = "<%= ImagenPrueba %>" alt = "poster" width = "202" height = "302"></td>
                 <td>
                     <div>
                             <div>
-                                <p>Average Score: <%= trm.getVote_average()%></p>
+                                <p>Average Score: <%= trm.getVote_average() %></p>
                         <p>Overview: <%= trm.getOverview() %></p>
                         <div>
-                            <p>Release Date: <%= trm.getRelease_date()%></p>
+                            <p>Release Date: <%= trm.getRelease_date() %></p>
                                 <div>
-                                    <p>Original Title: <%= trm.getOriginal_title()%></p>
+                                    <p>Original Title: <%= trm.getOriginal_title() %></p>
                                     <div>
                                         <%-- start web service invocation --%><hr/>
                                         <p>Vote average:</p> 
@@ -54,9 +54,10 @@
                                             int stars = Integer.parseInt(result);
                                             for(int i = 0; i < stars; i++){
                                             %>
-                                                <i class="fas fa-star"></i>
+                                                <!--<i class="fas fa-star"></i>-->
                                             <%
                                             }
+
                                         %>
                                         <%-- end web service invocation --%><hr/>
                                     </div>

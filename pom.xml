@@ -123,13 +123,16 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/perdoWS/Stars.wsdl</wsdlFile>
+                                <wsdlFile>ws.docencia.ces.siani.es/a21/databaseWS/AddDB.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName></packageName>
-                            <wsdlLocation>http://localhost:8080/perdoWS/Stars?WSDL</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/Stars.stale</staleFile>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <wsdlLocation>http://ws.docencia.ces.siani.es/a21/databaseWS/AddDB?WSDL</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/AddDB.stale</staleFile>
                         </configuration>
-                        <id>wsimport-generate-Stars</id>
+                        <id>wsimport-generate-AddDB</id>
                         <phase>generate-sources</phase>
                     </execution>
                     <execution>
@@ -138,16 +141,16 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>localhost_8080/DatabaseSoapWS/AddDB.wsdl</wsdlFile>
+                                <wsdlFile>ws.docencia.ces.siani.es/a21/perdoWS/Stars.wsdl</wsdlFile>
                             </wsdlFiles>
-                            <packageName>db</packageName>
+                            <packageName></packageName>
                             <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
-                            <wsdlLocation>http://localhost:8080/DatabaseSoapWS/AddDB?WSDL</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/AddDB.stale</staleFile>
+                            <wsdlLocation>http://ws.docencia.ces.siani.es/a21/perdoWS/Stars?WSDL</wsdlLocation>
+                            <staleFile>${project.build.directory}/jaxws/stale/Stars.stale</staleFile>
                         </configuration>
-                        <id>wsimport-generate-AddDB</id>
+                        <id>wsimport-generate-Stars</id>
                         <phase>generate-sources</phase>
                     </execution>
                 </executions>

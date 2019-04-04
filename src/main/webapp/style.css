@@ -13,13 +13,43 @@ body{
     margin: 0;
     padding:0;
     font-family: 'Open Sans', sans-serif;
-    background: #BAADAD;
+    background-color:#D3D3D3;
 }
 
+ul{
+    z-index: 1;
+    position:relative;
+    top:0;
+    width: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+} 
+
+
 .container{
+    z-index: 2;
     position: relative;
     width: 95%;
-    margin: 100px auto 0;
+    margin: 110px auto 0;
     height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -89,15 +119,21 @@ body{
     font-size: 16px;
 }
 
-.navCollection {
-    align-content: center;
+.footbuttons{
+    margin-top: 25px;
+    top:50%; 
+    text-align: center;
 }
-.navCollection .nextButton{
-    width: 100px;
-    height: 200px;
-}
-
-.navCollection .lastButton{
-    width: 100px;
-    height: 200px;
+.footbuttons .Button {
+    background-color: #333;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
 }
